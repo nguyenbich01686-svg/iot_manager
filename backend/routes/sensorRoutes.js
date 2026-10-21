@@ -73,7 +73,7 @@ router.get(
               .query(`
                 WITH latest_samples AS (
 
-                  SELECT TOP 3000
+                  SELECT
                     create_at
 
                   FROM data_sensor
