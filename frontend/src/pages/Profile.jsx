@@ -82,7 +82,7 @@ function Profile() {
       "https://lunar-desert-4409451.postman.co/workspace/Personal-Workspace~a65beafb-5a0c-460c-9fcb-1c14e20b4084/request/53649443-fbd40dd0-792e-479b-9f53-d4fc774013f8?action=share&creator=53649443",
 
     "GitHub Repository":
-      "https://github.com/NgBich78/iot_manager.git",
+      "https://github.com/nguyenbich01686-svg/iot_manager.git",
 
     "Figma Design":
       "https://www.figma.com/design/JVBqFmLXqFFDWLUMo2JTNB/IOT?node-id=0-1&t=idKaVrkh7Bl5UluM-1",
