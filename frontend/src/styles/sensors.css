@@ -1,0 +1,1598 @@
+/* ==========================================
+   DATA SENSORS PAGE
+========================================== */
+
+.sensors-page {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   FILTER BAR
+========================================== */
+
+.sensors-page .filter-bar {
+  flex-shrink: 0;
+
+  min-height: 70px;
+
+  margin-bottom: 20px;
+
+  padding:
+    11px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 2px 6px
+    rgba(
+      15,
+      23,
+      42,
+      0.03
+    );
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   SENSOR SELECT
+========================================== */
+
+.sensors-page
+.filter-bar
+> select {
+  flex:
+    0 0 155px;
+
+  width: 155px;
+  height: 46px;
+
+  padding:
+    0 36px
+    0 16px;
+
+  color:
+    #444B59;
+
+  background-color:
+    #F1F3F5;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance:
+    none;
+
+  -moz-appearance:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23596578' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    right 12px center;
+
+  background-size:
+    16px 16px;
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.sensors-page .search-box {
+  height: 46px;
+
+  flex:
+    1 1 auto;
+
+  min-width: 0;
+
+  padding:
+    0 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    #626B79;
+
+  background:
+    #F1F3F5;
+
+  border-radius:
+    10px;
+}
+
+.sensors-page
+.search-box
+svg {
+  flex-shrink: 0;
+}
+
+.sensors-page
+.search-box
+input {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  color:
+    #333A47;
+
+  background:
+    transparent;
+}
+
+.sensors-page
+.search-box
+input::placeholder {
+  color:
+    #737B88;
+}
+
+
+/* ==========================================
+   CLEAR BUTTON
+========================================== */
+
+.sensors-page .clear-button {
+  flex:
+    0 0 auto;
+
+  height: 46px;
+
+  padding:
+    0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  color:
+    #444B59;
+
+  background:
+    #F1F3F5;
+
+  white-space:
+    nowrap;
+
+  transition:
+    all 0.2s ease;
+}
+
+.sensors-page
+.clear-button:hover {
+  color:
+    var(--primary);
+
+  background:
+    #E9F2F7;
+}
+
+
+/* ==========================================
+   TABLE CARD
+========================================== */
+
+.sensors-page .table-card {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    #E1E7EC;
+
+  border-radius:
+    14px;
+
+  overflow: hidden;
+}
+
+.sensors-page
+.fixed-table-card {
+  min-height: 0;
+}
+
+
+/* ==========================================
+   TABLE SCROLL AREA
+========================================== */
+
+.sensors-page .table-scroll {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    #CBD5E1
+    transparent;
+}
+
+.sensors-page
+.table-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.sensors-page
+.table-scroll::-webkit-scrollbar-thumb {
+  background:
+    #CBD5E1;
+
+  border-radius:
+    10px;
+}
+
+.sensors-page
+.table-scroll::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.sensors-page table {
+  width: 100%;
+
+  min-width: 760px;
+
+  border-collapse:
+    separate;
+
+  border-spacing: 0;
+
+  color:
+    #51596A;
+}
+
+
+/* ==========================================
+   TABLE HEADER
+========================================== */
+
+.sensors-page thead th {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 3;
+
+  height: 56px;
+
+  padding:
+    0 22px;
+
+  text-align: left;
+
+  color:
+    #3172A2;
+
+  background:
+    #EAF4F9;
+
+  border-bottom:
+    1px solid
+    #E1E7EC;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ==========================================
+   TABLE BODY
+========================================== */
+
+.sensors-page tbody td {
+  height: 62px;
+
+  padding:
+    0 22px;
+
+  color:
+    #525B6C;
+
+  border-bottom:
+    1px solid
+    #E8EDF1;
+
+  font-size:
+    14px;
+
+  vertical-align:
+    middle;
+}
+
+.sensors-page
+tbody
+tr:last-child
+td {
+  border-bottom:
+    none;
+}
+
+.sensors-page
+tbody
+tr {
+  transition:
+    background 0.15s ease;
+}
+
+.sensors-page
+tbody
+tr:hover {
+  background:
+    #FAFCFD;
+}
+
+
+/* ==========================================
+   SENSOR TYPE BADGE
+========================================== */
+
+.sensors-page .type-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    28px;
+
+  padding:
+    4px 14px;
+
+  color:
+    #3172A2;
+
+  background:
+    #E9F2F7;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ==========================================
+   VALUE
+========================================== */
+
+.sensors-page
+tbody
+td
+strong {
+  color:
+    #525B6C;
+
+  font-weight:
+    600;
+}
+
+.sensors-page
+.unit-text {
+  color:
+    #697386;
+
+  font-weight:
+    400;
+}
+
+
+/* ==========================================
+   EMPTY TABLE
+========================================== */
+
+.sensors-page .empty-table {
+  height:
+    130px;
+
+  text-align:
+    center;
+
+  color:
+    #8B95A5;
+}
+
+
+/* ==========================================
+   TABLE FOOTER
+   GIỐNG ACTION HISTORY
+========================================== */
+
+.sensors-page .table-footer {
+  flex-shrink: 0;
+
+  min-height:
+    66px;
+
+  padding:
+    10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  background:
+    #FFFFFF;
+
+  border-top:
+    1px solid
+    #E1E7EC;
+}
+
+
+/* ==========================================
+   FOOTER LEFT
+   GIỐNG ACTION HISTORY
+========================================== */
+
+.sensors-page
+.table-footer-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  color:
+    #626B79;
+
+  font-size:
+    13px;
+}
+
+.sensors-page
+.table-footer-left
+strong {
+  color:
+    #3F4755;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================
+   PAGINATION
+   GIỐNG ACTION HISTORY
+========================================== */
+
+.sensors-page .pagination {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.sensors-page .page-button,
+.sensors-page .pagination-arrow {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #E1E6EB;
+
+  border-radius:
+    50%;
+
+  color:
+    #596273;
+
+  background:
+    #FFFFFF;
+
+  font-size:
+    13px;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+/* ==========================================
+   PAGINATION HOVER
+========================================== */
+
+.sensors-page
+.page-button:hover,
+.sensors-page
+.pagination-arrow:not(:disabled):hover {
+  color:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+/* ==========================================
+   ACTIVE PAGE
+========================================== */
+
+.sensors-page
+.active-page {
+  color:
+    #FFFFFF;
+
+  background:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+.sensors-page
+.active-page:hover {
+  color:
+    #FFFFFF;
+}
+
+
+/* ==========================================
+   DISABLED PAGINATION
+========================================== */
+
+.sensors-page
+.pagination-arrow:disabled {
+  opacity:
+    0.35;
+
+  cursor:
+    default;
+}
+
+
+/* ==========================================
+   PAGINATION DOTS
+========================================== */
+
+.sensors-page
+.pagination-dots {
+  width:
+    28px;
+
+  text-align:
+    center;
+
+  color:
+    #7C8593;
+}
+
+
+/* ==========================================
+   RESPONSIVE WIDTH
+========================================== */
+
+@media (
+  max-width: 1200px
+) {
+
+  .sensors-page
+  .filter-bar {
+    gap:
+      10px;
+  }
+
+  .sensors-page
+  .filter-bar
+  > select {
+    flex-basis:
+      145px;
+
+    width:
+      145px;
+
+    font-size:
+      13px;
+  }
+
+  .sensors-page
+  .clear-button {
+    padding:
+      0 13px;
+
+    font-size:
+      13px;
+  }
+
+  .sensors-page
+  .table-footer-left {
+    gap:
+      12px;
+  }
+}
+
+
+/* ==========================================
+   SHORT SCREEN
+========================================== */
+
+@media (
+  max-height: 800px
+) {
+
+  .sensors-page
+  .filter-bar {
+    min-height:
+      62px;
+
+    margin-bottom:
+      14px;
+
+    padding:
+      8px 14px;
+  }
+
+  .sensors-page
+  .search-box,
+  .sensors-page
+  .filter-bar
+  > select,
+  .sensors-page
+  .clear-button {
+    height:
+      42px;
+  }
+
+  .sensors-page
+  thead
+  th {
+    height:
+      50px;
+  }
+
+  .sensors-page
+  tbody
+  td {
+    height:
+      54px;
+  }
+
+  .sensors-page
+  .table-footer {
+    min-height:
+      58px;
+  }
+}
+/* ==========================================
+   DATA SENSORS PAGE
+========================================== */
+
+.sensors-page {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   FILTER BAR
+========================================== */
+
+.sensors-page .filter-bar {
+  flex-shrink: 0;
+
+  min-height: 70px;
+
+  margin-bottom: 20px;
+
+  padding:
+    11px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 2px 6px
+    rgba(
+      15,
+      23,
+      42,
+      0.03
+    );
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   SENSOR SELECT
+========================================== */
+
+.sensors-page
+.filter-bar
+> select {
+  flex:
+    0 0 155px;
+
+  width: 155px;
+  height: 46px;
+
+  padding:
+    0 36px
+    0 16px;
+
+  color:
+    #444B59;
+
+  background-color:
+    #F1F3F5;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  appearance: none;
+
+  -webkit-appearance:
+    none;
+
+  -moz-appearance:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23596578' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    right 12px center;
+
+  background-size:
+    16px 16px;
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.sensors-page .search-box {
+  height: 46px;
+
+  flex:
+    1 1 auto;
+
+  min-width: 0;
+
+  padding:
+    0 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    #626B79;
+
+  background:
+    #F1F3F5;
+
+  border-radius:
+    10px;
+}
+
+
+.sensors-page
+.search-box
+svg {
+  flex-shrink: 0;
+}
+
+
+.sensors-page
+.search-box
+input {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  color:
+    #333A47;
+
+  background:
+    transparent;
+}
+
+
+.sensors-page
+.search-box
+input::placeholder {
+  color:
+    #737B88;
+}
+
+
+/* ==========================================
+   CLEAR BUTTON
+========================================== */
+
+.sensors-page .clear-button {
+  flex:
+    0 0 auto;
+
+  height: 46px;
+
+  padding:
+    0 16px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  color:
+    #444B59;
+
+  background:
+    #F1F3F5;
+
+  white-space:
+    nowrap;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.sensors-page
+.clear-button:hover {
+  color:
+    var(--primary);
+
+  background:
+    #E9F2F7;
+}
+
+
+/* ==========================================
+   TABLE CARD
+========================================== */
+
+.sensors-page .table-card {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    #E1E7EC;
+
+  border-radius:
+    14px;
+
+  overflow: hidden;
+}
+
+
+.sensors-page
+.fixed-table-card {
+  min-height: 0;
+}
+
+
+/* ==========================================
+   TABLE SCROLL AREA
+========================================== */
+
+.sensors-page .table-scroll {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    #CBD5E1
+    transparent;
+}
+
+
+.sensors-page
+.table-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+
+.sensors-page
+.table-scroll::-webkit-scrollbar-thumb {
+  background:
+    #CBD5E1;
+
+  border-radius:
+    10px;
+}
+
+
+.sensors-page
+.table-scroll::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.sensors-page table {
+  width: 100%;
+
+  min-width: 760px;
+
+  border-collapse:
+    separate;
+
+  border-spacing: 0;
+
+  color:
+    #51596A;
+}
+
+
+/* ==========================================
+   TABLE HEADER
+========================================== */
+
+.sensors-page thead th {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 3;
+
+  height: 56px;
+
+  padding:
+    0 22px;
+
+  text-align: left;
+
+  color:
+    #3172A2;
+
+  background:
+    #EAF4F9;
+
+  border-bottom:
+    1px solid
+    #E1E7EC;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ==========================================
+   TABLE BODY
+========================================== */
+
+.sensors-page tbody td {
+  height: 62px;
+
+  padding:
+    0 22px;
+
+  color:
+    #525B6C;
+
+  border-bottom:
+    1px solid
+    #E8EDF1;
+
+  font-size:
+    14px;
+
+  vertical-align:
+    middle;
+}
+
+
+.sensors-page
+tbody
+tr:last-child
+td {
+  border-bottom:
+    none;
+}
+
+
+.sensors-page
+tbody
+tr {
+  transition:
+    background 0.15s ease;
+}
+
+
+.sensors-page
+tbody
+tr:hover {
+  background:
+    #FAFCFD;
+}
+
+
+/* ==========================================
+   SENSOR TYPE BADGE
+========================================== */
+
+.sensors-page .type-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    28px;
+
+  padding:
+    4px 14px;
+
+  color:
+    #3172A2;
+
+  background:
+    #E9F2F7;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ==========================================
+   VALUE
+========================================== */
+
+.sensors-page
+tbody
+td
+strong {
+  color:
+    #525B6C;
+
+  font-weight:
+    600;
+}
+
+
+.sensors-page
+.unit-text {
+  color:
+    #697386;
+
+  font-weight:
+    400;
+}
+
+
+/* ==========================================
+   EMPTY TABLE
+========================================== */
+
+.sensors-page .empty-table {
+  height:
+    130px;
+
+  text-align:
+    center;
+
+  color:
+    #8B95A5;
+}
+
+
+/* ==========================================
+   TABLE FOOTER
+========================================== */
+
+.sensors-page .table-footer {
+  flex-shrink: 0;
+
+  min-height:
+    66px;
+
+  padding:
+    10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  background:
+    #FFFFFF;
+
+  border-top:
+    1px solid
+    #E1E7EC;
+}
+
+
+/* ==========================================
+   FOOTER LEFT
+========================================== */
+
+.sensors-page
+.table-footer-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  color:
+    #626B79;
+
+  font-size:
+    13px;
+}
+
+
+.sensors-page
+.table-footer-left
+strong {
+  color:
+    #3F4755;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================
+   PAGINATION
+========================================== */
+
+.sensors-page .pagination {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+
+.sensors-page .page-button,
+.sensors-page .pagination-arrow {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #E1E6EB;
+
+  border-radius:
+    50%;
+
+  color:
+    #596273;
+
+  background:
+    #FFFFFF;
+
+  font-size:
+    13px;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.sensors-page
+.page-button:hover,
+.sensors-page
+.pagination-arrow:not(:disabled):hover {
+  color:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+.sensors-page
+.active-page {
+  color:
+    #FFFFFF;
+
+  background:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+.sensors-page
+.active-page:hover {
+  color:
+    #FFFFFF;
+}
+
+
+.sensors-page
+.pagination-arrow:disabled {
+  opacity:
+    0.35;
+
+  cursor:
+    default;
+}
+
+
+.sensors-page
+.pagination-dots {
+  width:
+    28px;
+
+  text-align:
+    center;
+
+  color:
+    #7C8593;
+}
+
+
+/* ==========================================
+   COPY TIME
+========================================== */
+
+.sensors-page
+.copy-time-cell {
+  cursor:
+    copy;
+
+  outline:
+    none;
+
+  user-select:
+    none;
+}
+
+
+.sensors-page
+.copy-time-content {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  white-space:
+    nowrap;
+}
+
+
+.sensors-page
+.copy-time-icon {
+  flex-shrink:
+    0;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    #8A96A5;
+
+  opacity:
+    0;
+
+  transition:
+    opacity 0.18s ease;
+}
+
+
+/*
+  Hover -> hiện Copy.
+
+  Sau click -> dấu tích cũng dùng
+  chính màu #8A96A5 này.
+*/
+
+.sensors-page
+.copy-time-cell:hover
+.copy-time-icon,
+
+.sensors-page
+.copy-time-cell:focus-visible
+.copy-time-icon {
+  opacity:
+    1;
+}
+
+
+/*
+  Khi icon đang là Check thì chuột
+  có rời khỏi ô vẫn thấy dấu tích
+  trong 1 giây.
+*/
+
+.sensors-page
+.copy-time-cell
+.copy-time-icon:has(svg[data-lucide="check"]) {
+  opacity:
+    1;
+}
+
+
+/* ==========================================
+   RESPONSIVE WIDTH
+========================================== */
+
+@media (
+  max-width: 1200px
+) {
+
+  .sensors-page
+  .filter-bar {
+    gap:
+      10px;
+  }
+
+
+  .sensors-page
+  .filter-bar
+  > select {
+    flex-basis:
+      145px;
+
+    width:
+      145px;
+
+    font-size:
+      13px;
+  }
+
+
+  .sensors-page
+  .clear-button {
+    padding:
+      0 13px;
+
+    font-size:
+      13px;
+  }
+
+
+  .sensors-page
+  .table-footer-left {
+    gap:
+      12px;
+  }
+}
+
+
+/* ==========================================
+   SHORT SCREEN
+========================================== */
+
+@media (
+  max-height: 800px
+) {
+
+  .sensors-page
+  .filter-bar {
+    min-height:
+      62px;
+
+    margin-bottom:
+      14px;
+
+    padding:
+      8px 14px;
+  }
+
+
+  .sensors-page
+  .search-box,
+  .sensors-page
+  .filter-bar
+  > select,
+  .sensors-page
+  .clear-button {
+    height:
+      42px;
+  }
+
+
+  .sensors-page
+  thead
+  th {
+    height:
+      50px;
+  }
+
+
+  .sensors-page
+  tbody
+  td {
+    height:
+      54px;
+  }
+
+
+  .sensors-page
+  .table-footer {
+    min-height:
+      58px;
+  }
+}

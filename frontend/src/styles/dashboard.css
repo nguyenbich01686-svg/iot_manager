@@ -1,0 +1,963 @@
+/* ==========================================
+   DASHBOARD
+========================================== */
+
+.dashboard-page {
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   SENSOR GRID
+========================================== */
+
+.sensor-grid {
+  flex-shrink: 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap: 22px;
+}
+
+
+/* ==========================================
+   SENSOR CARD
+========================================== */
+
+.sensor-card {
+  height:
+    clamp(
+      120px,
+      16vh,
+      160px
+    );
+
+  min-height: 0;
+
+  padding:
+    20px 24px;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    15px;
+
+  box-shadow:
+    0 3px 10px
+    rgba(
+      15,
+      23,
+      42,
+      0.05
+    );
+}
+
+
+.sensor-header {
+  display: flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  color:
+    #536175;
+
+  font-size:
+    16px;
+
+  font-weight:
+    600;
+}
+
+
+.sensor-icon {
+  width:
+    38px;
+
+  height:
+    38px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+}
+
+
+/* ==========================================
+   SENSOR COLORS
+========================================== */
+
+.sensor-icon.orange {
+  color:
+    #F97316;
+
+  background:
+    #FFF0E6;
+}
+
+
+.sensor-icon.blue {
+  color:
+    #3B82F6;
+
+  background:
+    #E7F0FF;
+}
+
+
+.sensor-icon.yellow {
+  color:
+    #D9A900;
+
+  background:
+    #FFF6CC;
+}
+
+
+/* ==========================================
+   SENSOR VALUE
+========================================== */
+
+.sensor-value {
+  margin-top:
+    clamp(
+      18px,
+      2.4vh,
+      28px
+    );
+
+  color:
+    #111827;
+
+  font-size:
+    clamp(
+      32px,
+      4vh,
+      44px
+    );
+
+  line-height:
+    1;
+
+  font-weight:
+    800;
+}
+
+
+.sensor-value small {
+  font-size:
+    clamp(
+      25px,
+      3.2vh,
+      35px
+    );
+}
+
+
+/* ==========================================
+   DEVICE GRID
+========================================== */
+
+.device-grid {
+  flex-shrink: 0;
+
+  margin-top:
+    20px;
+
+  display:
+    grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(0, 1fr)
+    );
+
+  gap:
+    22px;
+}
+
+
+/* ==========================================
+   DEVICE CARD
+========================================== */
+
+.device-card {
+  position:
+    relative;
+
+  height:
+    clamp(
+      58px,
+      7.5vh,
+      72px
+    );
+
+  padding:
+    0 20px;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    space-between;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 2px 8px
+    rgba(
+      15,
+      23,
+      42,
+      0.04
+    );
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+
+/* ==========================================
+   DEVICE CARD ACTIVE
+========================================== */
+
+.device-card-active {
+  background:
+    #F2FAFF;
+
+  border-color:
+    #76AED1;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(
+      49,
+      114,
+      162,
+      0.12
+    ),
+
+    0 0 18px
+    rgba(
+      49,
+      114,
+      162,
+      0.20
+    ),
+
+    0 6px 16px
+    rgba(
+      49,
+      114,
+      162,
+      0.12
+    );
+
+  transform:
+    translateY(-1px);
+}
+
+
+/* ==========================================
+   DEVICE CARD LOADING
+========================================== */
+
+.device-card-loading {
+  border-color:
+    #A7BBC9;
+
+  box-shadow:
+    0 0 0 1px
+    rgba(
+      49,
+      114,
+      162,
+      0.08
+    ),
+
+    0 4px 14px
+    rgba(
+      49,
+      114,
+      162,
+      0.10
+    );
+}
+
+
+/*
+  Nếu đang ON rồi bấm OFF:
+
+  card vẫn giữ màu ON trong lúc Loading.
+
+  Chỉ khi ESP xác nhận OFF
+  card mới trở về màu bình thường.
+
+  Đây là trạng thái thật của hardware,
+  không phải trạng thái yêu cầu.
+*/
+
+
+/* ==========================================
+   DEVICE INFO
+========================================== */
+
+.device-info {
+  min-width: 0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    12px;
+
+  color:
+    #172033;
+
+  font-size:
+    15px;
+
+  font-weight:
+    700;
+
+  transition:
+    color 0.25s ease;
+}
+
+
+.device-card-active
+.device-info {
+  color:
+    #215F89;
+}
+
+
+/* ==========================================
+   DEVICE NAME WRAP
+========================================== */
+
+.device-name-wrap {
+  min-width: 0;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  justify-content:
+    center;
+
+  gap:
+    2px;
+}
+
+
+.device-name {
+  overflow:
+    hidden;
+
+  white-space:
+    nowrap;
+
+  text-overflow:
+    ellipsis;
+}
+
+
+/* ==========================================
+   DEVICE LOADING TEXT
+========================================== */
+
+.device-loading-text {
+  color:
+    #6F8798;
+
+  font-size:
+    10px;
+
+  line-height:
+    1;
+
+  font-weight:
+    600;
+
+  letter-spacing:
+    0.1px;
+
+  animation:
+    deviceLoadingTextPulse
+    1s ease-in-out
+    infinite;
+}
+
+
+/* ==========================================
+   DEVICE ICON
+========================================== */
+
+.device-icon {
+  width:
+    36px;
+
+  height:
+    36px;
+
+  flex-shrink:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border-radius:
+    50%;
+
+  color:
+    #637083;
+
+  background:
+    #E9EEF2;
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+
+.device-card-active
+.device-icon {
+  color:
+    #3172A2;
+
+  background:
+    #DCEFF9;
+
+  box-shadow:
+    0 0 12px
+    rgba(
+      49,
+      114,
+      162,
+      0.20
+    );
+}
+
+
+/* ==========================================
+   DEVICE SWITCH
+========================================== */
+
+.switch {
+  position:
+    relative;
+
+  width:
+    66px;
+
+  height:
+    32px;
+
+  flex-shrink:
+    0;
+
+  padding:
+    0;
+
+  border:
+    none;
+
+  border-radius:
+    20px;
+
+  background:
+    #D6DCE1;
+
+  cursor:
+    pointer;
+
+  overflow:
+    hidden;
+
+  transition:
+    background 0.22s ease,
+    box-shadow 0.22s ease,
+    opacity 0.22s ease;
+}
+
+
+/* ==========================================
+   SWITCH KNOB
+========================================== */
+
+.switch-knob {
+  position:
+    absolute;
+
+  left:
+    4px;
+
+  top:
+    4px;
+
+  width:
+    24px;
+
+  height:
+    24px;
+
+  border-radius:
+    50%;
+
+  background:
+    #FFFFFF;
+
+  box-shadow:
+    0 1px 4px
+    rgba(
+      0,
+      0,
+      0,
+      0.18
+    );
+
+  transition:
+    left 0.22s ease,
+    opacity 0.18s ease,
+    transform 0.18s ease,
+    box-shadow 0.22s ease;
+}
+
+
+/* ==========================================
+   SWITCH LABEL
+========================================== */
+
+.switch-label {
+  position:
+    relative;
+
+  z-index:
+    1;
+
+  margin-left:
+    26px;
+
+  color:
+    #596578;
+
+  font-size:
+    9px;
+
+  font-weight:
+    800;
+
+  transition:
+    color 0.22s ease,
+    margin-left 0.22s ease,
+    opacity 0.18s ease;
+}
+
+
+/* ==========================================
+   SWITCH ACTIVE
+========================================== */
+
+.switch.active {
+  background:
+    var(--primary);
+
+  box-shadow:
+    0 0 10px
+    rgba(
+      49,
+      114,
+      162,
+      0.22
+    );
+}
+
+
+.switch.active
+.switch-knob {
+  left:
+    38px;
+
+  box-shadow:
+    0 1px 5px
+    rgba(
+      0,
+      0,
+      0,
+      0.20
+    );
+}
+
+
+.switch.active
+.switch-label {
+  margin-left:
+    -26px;
+
+  color:
+    #FFFFFF;
+}
+
+
+/* ==========================================
+   SWITCH LOADING
+========================================== */
+
+.switch.loading {
+  background:
+    #7898AE;
+
+  cursor:
+    wait;
+
+  box-shadow:
+    0 0 0 3px
+    rgba(
+      49,
+      114,
+      162,
+      0.10
+    );
+
+  animation:
+    switchLoadingPulse
+    1s ease-in-out
+    infinite;
+}
+
+
+/*
+  Không cho CSS disabled mặc định
+  làm nút quá mờ.
+*/
+
+.switch.loading:disabled {
+  opacity:
+    1;
+
+  cursor:
+    wait;
+}
+
+
+/*
+  Khi Loading:
+
+  ẩn knob ON/OFF,
+  thay bằng WAIT + spinner.
+*/
+
+.switch.loading
+.switch-knob {
+  left:
+    21px;
+
+  opacity:
+    0;
+
+  transform:
+    scale(0.75);
+}
+
+
+.switch.loading
+.switch-label,
+
+.switch.active.loading
+.switch-label {
+  position:
+    absolute;
+
+  left:
+    9px;
+
+  top:
+    11px;
+
+  margin:
+    0;
+
+  color:
+    #FFFFFF;
+
+  font-size:
+    8px;
+
+  line-height:
+    1;
+
+  letter-spacing:
+    0.4px;
+}
+
+
+/* ==========================================
+   SWITCH SPINNER
+========================================== */
+
+.switch-loader {
+  position:
+    absolute;
+
+  top:
+    9px;
+
+  right:
+    9px;
+
+  width:
+    14px;
+
+  height:
+    14px;
+
+  border:
+    2px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.42
+    );
+
+  border-top-color:
+    #FFFFFF;
+
+  border-radius:
+    50%;
+
+  animation:
+    switchLoaderSpin
+    0.62s linear
+    infinite;
+}
+
+
+/* ==========================================
+   LOADING ANIMATIONS
+========================================== */
+
+@keyframes
+switchLoaderSpin {
+
+  to {
+    transform:
+      rotate(
+        360deg
+      );
+  }
+}
+
+
+@keyframes
+switchLoadingPulse {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 3px
+      rgba(
+        49,
+        114,
+        162,
+        0.08
+      );
+  }
+
+
+  50% {
+    box-shadow:
+      0 0 0 5px
+      rgba(
+        49,
+        114,
+        162,
+        0.16
+      );
+  }
+}
+
+
+@keyframes
+deviceLoadingTextPulse {
+
+  0%,
+  100% {
+    opacity:
+      0.55;
+  }
+
+
+  50% {
+    opacity:
+      1;
+  }
+}
+
+
+/* ==========================================
+   SENSOR HISTORY CHART
+========================================== */
+
+.chart-card {
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    16px;
+
+  box-shadow:
+    0 3px 10px
+    rgba(
+      15,
+      23,
+      42,
+      0.04
+    );
+}
+
+
+.dashboard-chart {
+  flex:
+    1;
+
+  min-width:
+    0;
+
+  min-height:
+    0;
+
+  margin-top:
+    20px;
+
+  padding:
+    18px 22px 10px;
+
+  display:
+    flex;
+
+  flex-direction:
+    column;
+
+  overflow:
+    hidden;
+}
+
+
+.dashboard-chart h2 {
+  flex-shrink:
+    0;
+
+  margin:
+    0 0 8px;
+
+  color:
+    #172033;
+
+  font-size:
+    17px;
+
+  font-weight:
+    700;
+}
+
+
+.chart-area {
+  flex:
+    1;
+
+  width:
+    100%;
+
+  min-width:
+    0;
+
+  min-height:
+    0;
+}
+
+
+/* ==========================================
+   RESPONSIVE
+========================================== */
+
+@media (
+  max-width: 1100px
+) {
+
+  .sensor-grid,
+  .device-grid {
+    gap:
+      12px;
+  }
+
+
+  .sensor-card {
+    padding:
+      17px;
+  }
+
+
+  .device-card {
+    padding:
+      0 14px;
+  }
+}

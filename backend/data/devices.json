@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "code": "LED1",
+    "name": "Air Conditioner",
+    "state": false
+  },
+  {
+    "id": 2,
+    "code": "LED2",
+    "name": "Mist Spray",
+    "state": false
+  },
+  {
+    "id": 3,
+    "code": "LED3",
+    "name": "Lighting",
+    "state": false
+  }
+]

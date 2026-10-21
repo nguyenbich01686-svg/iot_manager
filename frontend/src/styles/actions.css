@@ -1,0 +1,2070 @@
+/* ==========================================
+   ACTION HISTORY PAGE
+========================================== */
+
+.actions-page {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   FILTER BAR
+========================================== */
+
+.actions-page .filter-bar {
+  flex-shrink: 0;
+
+  min-height: 70px;
+
+  margin-bottom: 20px;
+
+  padding:
+    11px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 2px 6px
+    rgba(
+      15,
+      23,
+      42,
+      0.03
+    );
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.actions-page .search-box {
+  height: 46px;
+
+  flex:
+    1 1 auto;
+
+  min-width: 180px;
+
+  padding:
+    0 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    #626B79;
+
+  background:
+    #F1F3F5;
+
+  border-radius:
+    10px;
+}
+
+.actions-page .search-box svg {
+  flex-shrink: 0;
+}
+
+.actions-page .search-box input {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  color:
+    #333A47;
+
+  background:
+    transparent;
+}
+
+.actions-page .search-box input::placeholder {
+  color:
+    #737B88;
+}
+
+
+/* ==========================================
+   FILTER SELECT
+========================================== */
+
+.actions-page .filter-bar > select {
+  height: 46px;
+
+  padding:
+    0 34px
+    0 14px;
+
+  color:
+    #444B59;
+
+  background-color:
+    #F1F3F5;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  white-space: nowrap;
+
+  appearance: none;
+  -webkit-appearance:
+    none;
+  -moz-appearance:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23596578' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    right 11px center;
+
+  background-size:
+    16px 16px;
+}
+
+
+/* All Devices */
+
+.actions-page
+.filter-bar
+> select:nth-of-type(1) {
+  flex:
+    0 1 150px;
+
+  width: 150px;
+
+  min-width: 125px;
+}
+
+
+/* All Actions */
+
+.actions-page
+.filter-bar
+> select:nth-of-type(2) {
+  flex:
+    0 1 140px;
+
+  width: 140px;
+
+  min-width: 120px;
+}
+
+
+/* All Statuses */
+
+.actions-page
+.filter-bar
+> select:nth-of-type(3) {
+  flex:
+    0 1 145px;
+
+  width: 145px;
+
+  min-width: 125px;
+}
+
+
+/* ==========================================
+   CLEAR BUTTON
+========================================== */
+
+.actions-page .clear-button {
+  flex:
+    0 0 auto;
+
+  height: 46px;
+
+  padding:
+    0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color:
+    #444B59;
+
+  background:
+    #F1F3F5;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  white-space: nowrap;
+
+  transition:
+    all 0.2s ease;
+}
+
+.actions-page .clear-button:hover {
+  color:
+    var(--primary);
+
+  background:
+    #E9F2F7;
+}
+
+
+/* ==========================================
+   TABLE CARD
+========================================== */
+
+.actions-page .table-card {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    #E1E7EC;
+
+  border-radius:
+    14px;
+
+  overflow: hidden;
+}
+
+.actions-page .fixed-table-card {
+  min-height: 0;
+}
+
+
+/* ==========================================
+   TABLE SCROLL AREA
+========================================== */
+
+.actions-page .table-scroll {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    #CBD5E1 transparent;
+}
+
+.actions-page
+.table-scroll::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+.actions-page
+.table-scroll::-webkit-scrollbar-thumb {
+  background:
+    #CBD5E1;
+
+  border-radius:
+    10px;
+}
+
+.actions-page
+.table-scroll::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.actions-page table {
+  width: 100%;
+
+  min-width: 900px;
+
+  border-collapse:
+    separate;
+
+  border-spacing: 0;
+
+  color:
+    #51596A;
+}
+
+.actions-page thead th {
+  position: sticky;
+
+  top: 0;
+
+  z-index: 3;
+
+  height: 56px;
+
+  padding:
+    0 22px;
+
+  text-align: left;
+
+  color:
+    #3172A2;
+
+  background:
+    #EAF4F9;
+
+  border-bottom:
+    1px solid
+    #E1E7EC;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+.actions-page tbody td {
+  height: 62px;
+
+  padding:
+    0 22px;
+
+  border-bottom:
+    1px solid
+    #E8EDF1;
+
+  color:
+    #525B6C;
+
+  font-size:
+    14px;
+
+  vertical-align:
+    middle;
+}
+
+.actions-page tbody tr:last-child td {
+  border-bottom:
+    none;
+}
+
+.actions-page tbody tr {
+  transition:
+    background 0.15s ease;
+}
+
+.actions-page tbody tr:hover {
+  background:
+    #FAFCFD;
+}
+
+
+/* ==========================================
+   ID
+========================================== */
+
+.actions-page .action-id {
+  color:
+    #586273;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================
+   TIME
+========================================== */
+
+.actions-page .action-time {
+  display: flex;
+  align-items: center;
+
+  gap: 9px;
+
+  white-space:
+    nowrap;
+}
+
+.actions-page .action-time svg {
+  flex-shrink: 0;
+
+  color:
+    #596273;
+}
+
+
+/* ==========================================
+   DEVICE BADGE
+========================================== */
+
+.actions-page .device-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    28px;
+
+  padding:
+    4px 14px;
+
+  color:
+    #3172A2;
+
+  background:
+    #E9F2F7;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ==========================================
+   ACTION BADGE
+========================================== */
+
+.actions-page .action-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width:
+    56px;
+
+  height:
+    28px;
+
+  padding:
+    0 14px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  line-height:
+    1;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ON */
+
+.actions-page .action-on {
+  color:
+    #FFFFFF;
+
+  background:
+    #3172A2;
+}
+
+
+/* OFF */
+
+.actions-page .action-off {
+  color:
+    #3172A2;
+
+  background:
+    #E9F2F7;
+}
+
+
+/* ==========================================
+   STATUS BADGE
+========================================== */
+
+.actions-page .status-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width:
+    82px;
+
+  height:
+    28px;
+
+  padding:
+    0 14px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  line-height:
+    1;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+/* SUCCESS */
+
+.actions-page .status-success {
+  color:
+    #149447;
+
+  background:
+    #DDF8E7;
+}
+
+
+/* ERROR */
+
+.actions-page .status-error {
+  color:
+    #E53935;
+
+  background:
+    #FFE2E2;
+}
+/* LOADING */
+
+.actions-page .status-loading {
+  color:
+    #B7791F;
+
+  background:
+    #FFF4CC;
+}
+
+
+/* ==========================================
+   EMPTY
+========================================== */
+
+.actions-page .empty-table {
+  height:
+    130px;
+
+  text-align:
+    center;
+
+  color:
+    #8B95A5;
+}
+
+
+/* ==========================================
+   TABLE FOOTER
+========================================== */
+
+.actions-page .table-footer {
+  flex-shrink: 0;
+
+  min-height:
+    66px;
+
+  padding:
+    10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content:
+    space-between;
+
+  gap: 20px;
+
+  background:
+    #FFFFFF;
+
+  border-top:
+    1px solid
+    #E1E7EC;
+}
+
+
+/* ==========================================
+   FOOTER LEFT
+========================================== */
+
+.actions-page .table-footer-left {
+  min-width: 0;
+
+  display: flex;
+  align-items: center;
+
+  gap: 22px;
+
+  color:
+    #626B79;
+
+  font-size:
+    13px;
+}
+
+.actions-page
+.table-footer-left
+strong {
+  color:
+    #3F4755;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================
+   ROWS PER PAGE
+========================================== */
+
+.actions-page .page-size-box {
+  display: flex;
+  align-items: center;
+
+  gap: 8px;
+
+  white-space:
+    nowrap;
+}
+
+.actions-page
+.page-size-box
+select {
+  height:
+    34px;
+
+  min-width:
+    62px;
+
+  padding:
+    0 27px
+    0 10px;
+
+  color:
+    #4E5868;
+
+  background-color:
+    #F3F5F7;
+
+  border:
+    1px solid
+    #E4E9ED;
+
+  border-radius:
+    8px;
+
+  outline:
+    none;
+
+  cursor:
+    pointer;
+
+  appearance:
+    none;
+
+  -webkit-appearance:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23596578' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    right 8px center;
+
+  background-size:
+    13px 13px;
+}
+
+
+/* ==========================================
+   PAGINATION
+========================================== */
+
+.actions-page .pagination {
+  display: flex;
+  align-items: center;
+
+  gap: 6px;
+}
+
+.actions-page .page-button,
+.actions-page .pagination-arrow {
+  width: 34px;
+  height: 34px;
+
+  padding: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border:
+    1px solid
+    #E1E6EB;
+
+  border-radius:
+    50%;
+
+  color:
+    #596273;
+
+  background:
+    #FFFFFF;
+
+  font-size:
+    13px;
+
+  transition:
+    all 0.2s ease;
+}
+
+.actions-page .page-button:hover,
+.actions-page
+.pagination-arrow:not(:disabled):hover {
+  color:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+.actions-page .active-page {
+  color:
+    #FFFFFF;
+
+  background:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+.actions-page .active-page:hover {
+  color:
+    #FFFFFF;
+}
+
+.actions-page
+.pagination-arrow:disabled {
+  opacity:
+    0.35;
+
+  cursor:
+    default;
+}
+
+.actions-page .pagination-dots {
+  width:
+    28px;
+
+  text-align:
+    center;
+
+  color:
+    #7C8593;
+}
+
+
+/* ==========================================
+   SMALL SCREEN
+========================================== */
+
+@media (
+  max-width: 1250px
+) {
+
+  .actions-page .filter-bar {
+    gap: 8px;
+  }
+
+  .actions-page
+  .filter-bar
+  > select {
+    padding-left:
+      11px;
+
+    font-size:
+      12px;
+  }
+
+  .actions-page
+  .clear-button {
+    padding:
+      0 11px;
+
+    font-size:
+      12px;
+  }
+
+  .actions-page
+  .table-footer-left {
+    gap:
+      12px;
+  }
+}
+
+
+/* ==========================================
+   SHORT SCREEN
+========================================== */
+
+@media (
+  max-height: 800px
+) {
+
+  .actions-page .filter-bar {
+    min-height:
+      62px;
+
+    margin-bottom:
+      14px;
+
+    padding:
+      8px 14px;
+  }
+
+  .actions-page .search-box,
+  .actions-page
+  .filter-bar
+  > select,
+  .actions-page
+  .clear-button {
+    height:
+      42px;
+  }
+
+  .actions-page thead th {
+    height:
+      50px;
+  }
+
+  .actions-page tbody td {
+    height:
+      54px;
+  }
+
+  .actions-page .table-footer {
+    min-height:
+      58px;
+  }
+}
+/* ==========================================
+   ACTION HISTORY PAGE
+========================================== */
+
+.actions-page {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   FILTER BAR
+========================================== */
+
+.actions-page .filter-bar {
+  flex-shrink: 0;
+
+  min-height: 70px;
+
+  margin-bottom: 20px;
+
+  padding:
+    11px 17px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    var(--border);
+
+  border-radius:
+    14px;
+
+  box-shadow:
+    0 2px 6px
+    rgba(
+      15,
+      23,
+      42,
+      0.03
+    );
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   SEARCH
+========================================== */
+
+.actions-page .search-box {
+  height: 46px;
+
+  flex:
+    1 1 auto;
+
+  min-width: 180px;
+
+  padding:
+    0 16px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+
+  color:
+    #626B79;
+
+  background:
+    #F1F3F5;
+
+  border-radius:
+    10px;
+}
+
+
+.actions-page
+.search-box
+svg {
+  flex-shrink:
+    0;
+}
+
+
+.actions-page
+.search-box
+input {
+  width: 100%;
+
+  min-width: 0;
+
+  padding: 0;
+
+  border: none;
+
+  outline: none;
+
+  color:
+    #333A47;
+
+  background:
+    transparent;
+}
+
+
+.actions-page
+.search-box
+input::placeholder {
+  color:
+    #737B88;
+}
+
+
+/* ==========================================
+   FILTER SELECT
+========================================== */
+
+.actions-page
+.filter-bar
+> select {
+  height: 46px;
+
+  padding:
+    0 34px
+    0 14px;
+
+  color:
+    #444B59;
+
+  background-color:
+    #F1F3F5;
+
+  border: none;
+
+  border-radius:
+    10px;
+
+  outline: none;
+
+  cursor: pointer;
+
+  white-space:
+    nowrap;
+
+  appearance:
+    none;
+
+  -webkit-appearance:
+    none;
+
+  -moz-appearance:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23596578' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    right 11px center;
+
+  background-size:
+    16px 16px;
+}
+
+
+/* All Devices */
+
+.actions-page
+.filter-bar
+> select:nth-of-type(1) {
+  flex:
+    0 1 150px;
+
+  width:
+    150px;
+
+  min-width:
+    125px;
+}
+
+
+/* All Actions */
+
+.actions-page
+.filter-bar
+> select:nth-of-type(2) {
+  flex:
+    0 1 140px;
+
+  width:
+    140px;
+
+  min-width:
+    120px;
+}
+
+
+/* All Statuses */
+
+.actions-page
+.filter-bar
+> select:nth-of-type(3) {
+  flex:
+    0 1 145px;
+
+  width:
+    145px;
+
+  min-width:
+    125px;
+}
+
+
+/* ==========================================
+   CLEAR BUTTON
+========================================== */
+
+.actions-page
+.clear-button {
+  flex:
+    0 0 auto;
+
+  height: 46px;
+
+  padding:
+    0 15px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  color:
+    #444B59;
+
+  background:
+    #F1F3F5;
+
+  border:
+    none;
+
+  border-radius:
+    10px;
+
+  white-space:
+    nowrap;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.actions-page
+.clear-button:hover {
+  color:
+    var(--primary);
+
+  background:
+    #E9F2F7;
+}
+
+
+/* ==========================================
+   TABLE CARD
+========================================== */
+
+.actions-page
+.table-card {
+  flex: 1;
+
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    #FFFFFF;
+
+  border:
+    1px solid
+    #E1E7EC;
+
+  border-radius:
+    14px;
+
+  overflow:
+    hidden;
+}
+
+
+.actions-page
+.fixed-table-card {
+  min-height:
+    0;
+}
+
+
+/* ==========================================
+   TABLE SCROLL
+========================================== */
+
+.actions-page
+.table-scroll {
+  flex: 1;
+
+  min-height: 0;
+
+  overflow-y: auto;
+  overflow-x: auto;
+
+  scrollbar-width:
+    thin;
+
+  scrollbar-color:
+    #CBD5E1
+    transparent;
+}
+
+
+.actions-page
+.table-scroll::-webkit-scrollbar {
+  width:
+    7px;
+
+  height:
+    7px;
+}
+
+
+.actions-page
+.table-scroll::-webkit-scrollbar-thumb {
+  background:
+    #CBD5E1;
+
+  border-radius:
+    10px;
+}
+
+
+.actions-page
+.table-scroll::-webkit-scrollbar-track {
+  background:
+    transparent;
+}
+
+
+/* ==========================================
+   TABLE
+========================================== */
+
+.actions-page table {
+  width: 100%;
+
+  min-width:
+    900px;
+
+  border-collapse:
+    separate;
+
+  border-spacing:
+    0;
+
+  color:
+    #51596A;
+}
+
+
+.actions-page
+thead
+th {
+  position:
+    sticky;
+
+  top: 0;
+
+  z-index: 3;
+
+  height:
+    56px;
+
+  padding:
+    0 22px;
+
+  text-align:
+    left;
+
+  color:
+    #3172A2;
+
+  background:
+    #EAF4F9;
+
+  border-bottom:
+    1px solid
+    #E1E7EC;
+
+  font-size:
+    14px;
+
+  font-weight:
+    700;
+
+  white-space:
+    nowrap;
+}
+
+
+.actions-page
+tbody
+td {
+  height:
+    62px;
+
+  padding:
+    0 22px;
+
+  border-bottom:
+    1px solid
+    #E8EDF1;
+
+  color:
+    #525B6C;
+
+  font-size:
+    14px;
+
+  vertical-align:
+    middle;
+}
+
+
+.actions-page
+tbody
+tr:last-child
+td {
+  border-bottom:
+    none;
+}
+
+
+.actions-page
+tbody
+tr {
+  transition:
+    background 0.15s ease;
+}
+
+
+.actions-page
+tbody
+tr:hover {
+  background:
+    #FAFCFD;
+}
+
+
+/* ==========================================
+   ID
+========================================== */
+
+.actions-page
+.action-id {
+  color:
+    #586273;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================
+   TIME
+========================================== */
+
+.actions-page
+.action-time {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    9px;
+
+  white-space:
+    nowrap;
+}
+
+
+.actions-page
+.action-time
+svg {
+  flex-shrink:
+    0;
+}
+
+
+.actions-page
+.action-time
+> svg {
+  color:
+    #596273;
+}
+
+
+/* ==========================================
+   COPY TIME
+========================================== */
+
+.actions-page
+.copy-time-cell {
+  cursor:
+    copy;
+
+  outline:
+    none;
+
+  user-select:
+    none;
+}
+
+
+.actions-page
+.copy-time-icon {
+  flex-shrink:
+    0;
+
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  color:
+    #8A96A5;
+
+  opacity:
+    0;
+
+  transition:
+    opacity 0.18s ease;
+}
+
+
+/*
+  Icon copy và dấu tích
+  dùng cùng màu nhẹ.
+*/
+
+.actions-page
+.copy-time-icon
+svg {
+  color:
+    #8A96A5;
+}
+
+
+.actions-page
+.copy-time-cell:hover
+.copy-time-icon,
+
+.actions-page
+.copy-time-cell:focus-visible
+.copy-time-icon {
+  opacity:
+    1;
+}
+
+
+.actions-page
+.copy-time-cell
+.copy-time-icon:has(svg[data-lucide="check"]) {
+  opacity:
+    1;
+}
+
+
+/* ==========================================
+   DEVICE BADGE
+========================================== */
+
+.actions-page
+.device-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-height:
+    28px;
+
+  padding:
+    4px 14px;
+
+  color:
+    #3172A2;
+
+  background:
+    #E9F2F7;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+/* ==========================================
+   ACTION BADGE
+========================================== */
+
+.actions-page
+.action-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width:
+    56px;
+
+  height:
+    28px;
+
+  padding:
+    0 14px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  line-height:
+    1;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+.actions-page
+.action-on {
+  color:
+    #FFFFFF;
+
+  background:
+    #3172A2;
+}
+
+
+.actions-page
+.action-off {
+  color:
+    #3172A2;
+
+  background:
+    #E9F2F7;
+}
+
+
+/* ==========================================
+   STATUS BADGE
+========================================== */
+
+.actions-page
+.status-badge {
+  display:
+    inline-flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  min-width:
+    82px;
+
+  height:
+    28px;
+
+  padding:
+    0 14px;
+
+  border-radius:
+    999px;
+
+  font-size:
+    13px;
+
+  line-height:
+    1;
+
+  font-weight:
+    500;
+
+  white-space:
+    nowrap;
+}
+
+
+.actions-page
+.status-success {
+  color:
+    #149447;
+
+  background:
+    #DDF8E7;
+}
+
+
+.actions-page
+.status-error {
+  color:
+    #E53935;
+
+  background:
+    #FFE2E2;
+}
+
+
+.actions-page
+.status-loading {
+  color:
+    #B7791F;
+
+  background:
+    #FFF4CC;
+}
+
+
+/* ==========================================
+   EMPTY
+========================================== */
+
+.actions-page
+.empty-table {
+  height:
+    130px;
+
+  text-align:
+    center;
+
+  color:
+    #8B95A5;
+}
+
+
+/* ==========================================
+   TABLE FOOTER
+========================================== */
+
+.actions-page
+.table-footer {
+  flex-shrink: 0;
+
+  min-height:
+    66px;
+
+  padding:
+    10px 20px;
+
+  display: flex;
+  align-items: center;
+  justify-content:
+    space-between;
+
+  gap:
+    20px;
+
+  background:
+    #FFFFFF;
+
+  border-top:
+    1px solid
+    #E1E7EC;
+}
+
+
+/* ==========================================
+   FOOTER LEFT
+========================================== */
+
+.actions-page
+.table-footer-left {
+  min-width:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    22px;
+
+  color:
+    #626B79;
+
+  font-size:
+    13px;
+}
+
+
+.actions-page
+.table-footer-left
+strong {
+  color:
+    #3F4755;
+
+  font-weight:
+    500;
+}
+
+
+/* ==========================================
+   ROWS PER PAGE
+========================================== */
+
+.actions-page
+.page-size-box {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    8px;
+
+  white-space:
+    nowrap;
+}
+
+
+.actions-page
+.page-size-box
+select {
+  height:
+    34px;
+
+  min-width:
+    62px;
+
+  padding:
+    0 27px
+    0 10px;
+
+  color:
+    #4E5868;
+
+  background-color:
+    #F3F5F7;
+
+  border:
+    1px solid
+    #E4E9ED;
+
+  border-radius:
+    8px;
+
+  outline:
+    none;
+
+  cursor:
+    pointer;
+
+  appearance:
+    none;
+
+  -webkit-appearance:
+    none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='13' height='13' viewBox='0 0 24 24' fill='none' stroke='%23596578' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E");
+
+  background-repeat:
+    no-repeat;
+
+  background-position:
+    right 8px center;
+
+  background-size:
+    13px 13px;
+}
+
+
+/* ==========================================
+   PAGINATION
+========================================== */
+
+.actions-page
+.pagination {
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  gap:
+    6px;
+}
+
+
+.actions-page
+.page-button,
+.actions-page
+.pagination-arrow {
+  width:
+    34px;
+
+  height:
+    34px;
+
+  padding:
+    0;
+
+  display:
+    flex;
+
+  align-items:
+    center;
+
+  justify-content:
+    center;
+
+  border:
+    1px solid
+    #E1E6EB;
+
+  border-radius:
+    50%;
+
+  color:
+    #596273;
+
+  background:
+    #FFFFFF;
+
+  font-size:
+    13px;
+
+  transition:
+    all 0.2s ease;
+}
+
+
+.actions-page
+.page-button:hover,
+.actions-page
+.pagination-arrow:not(:disabled):hover {
+  color:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+.actions-page
+.active-page {
+  color:
+    #FFFFFF;
+
+  background:
+    var(--primary);
+
+  border-color:
+    var(--primary);
+}
+
+
+.actions-page
+.active-page:hover {
+  color:
+    #FFFFFF;
+}
+
+
+.actions-page
+.pagination-arrow:disabled {
+  opacity:
+    0.35;
+
+  cursor:
+    default;
+}
+
+
+.actions-page
+.pagination-dots {
+  width:
+    28px;
+
+  text-align:
+    center;
+
+  color:
+    #7C8593;
+}
+
+
+/* ==========================================
+   SMALL SCREEN
+========================================== */
+
+@media (
+  max-width: 1250px
+) {
+
+  .actions-page
+  .filter-bar {
+    gap:
+      8px;
+  }
+
+
+  .actions-page
+  .filter-bar
+  > select {
+    padding-left:
+      11px;
+
+    font-size:
+      12px;
+  }
+
+
+  .actions-page
+  .clear-button {
+    padding:
+      0 11px;
+
+    font-size:
+      12px;
+  }
+
+
+  .actions-page
+  .table-footer-left {
+    gap:
+      12px;
+  }
+}
+
+
+/* ==========================================
+   SHORT SCREEN
+========================================== */
+
+@media (
+  max-height: 800px
+) {
+
+  .actions-page
+  .filter-bar {
+    min-height:
+      62px;
+
+    margin-bottom:
+      14px;
+
+    padding:
+      8px 14px;
+  }
+
+
+  .actions-page
+  .search-box,
+  .actions-page
+  .filter-bar
+  > select,
+  .actions-page
+  .clear-button {
+    height:
+      42px;
+  }
+
+
+  .actions-page
+  thead
+  th {
+    height:
+      50px;
+  }
+
+
+  .actions-page
+  tbody
+  td {
+    height:
+      54px;
+  }
+
+
+  .actions-page
+  .table-footer {
+    min-height:
+      58px;
+  }
+}

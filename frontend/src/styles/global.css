@@ -1,0 +1,432 @@
+/* ==========================================
+   GLOBAL RESET
+========================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  height: 100%;
+
+  margin: 0;
+  padding: 0;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   VARIABLES
+========================================== */
+
+:root {
+  --primary: #3172A2;
+  --primary-dark: #275D85;
+  --primary-light: #E9F2F7;
+
+  --background: #F7F9FB;
+  --card: #FFFFFF;
+
+  --text: #172033;
+  --muted: #667085;
+
+  --border: #E2E7EB;
+
+  color: var(--text);
+
+  background:
+    var(--background);
+}
+
+
+/* ==========================================
+   GLOBAL FONT
+========================================== */
+
+html,
+body,
+button,
+input,
+select,
+textarea {
+  font-family:
+    "Inter",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* ==========================================
+   BODY
+========================================== */
+
+body {
+  margin: 0;
+
+  color:
+    var(--text);
+
+  background:
+    var(--background);
+
+  overflow: hidden;
+
+  font-weight: 400;
+
+  -webkit-font-smoothing:
+    antialiased;
+
+  -moz-osx-font-smoothing:
+    grayscale;
+}
+
+
+/* ==========================================
+   FORM ELEMENTS
+========================================== */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input,
+select,
+textarea {
+  color:
+    var(--text);
+}
+
+
+/* ==========================================
+   APP
+========================================== */
+
+.app-layout {
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   SIDEBAR
+========================================== */
+
+.sidebar {
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 250px;
+  height: 100vh;
+
+  padding:
+    28px 20px 18px;
+
+  display: flex;
+  flex-direction: column;
+
+  background:
+    #FFFFFF;
+
+  border-right:
+    1px solid #E7EBEE;
+
+  overflow: hidden;
+
+  z-index: 10;
+}
+
+
+/* ==========================================
+   LOGO
+========================================== */
+
+.brand h1 {
+  margin: 0;
+
+  color:
+    var(--primary);
+
+  font-size: 29px;
+
+  line-height: 1.1;
+
+  font-weight: 800;
+
+  letter-spacing:
+    -0.5px;
+}
+
+.brand span {
+  display: block;
+
+  margin-top: 7px;
+
+  color:
+    var(--muted);
+
+  font-size: 13px;
+
+  font-weight: 600;
+}
+
+
+/* ==========================================
+   SIDEBAR NAV
+========================================== */
+
+.sidebar nav {
+  margin-top: 52px;
+
+  display: flex;
+  flex-direction: column;
+
+  gap: 14px;
+}
+
+.nav-link {
+  height: 48px;
+
+  padding:
+    0 18px;
+
+  display: flex;
+  align-items: center;
+
+  gap: 14px;
+
+  color:
+    #4D4D59;
+
+  border-radius:
+    28px;
+
+  text-decoration: none;
+
+  font-size: 15px;
+
+  font-weight: 600;
+
+  transition:
+    all 0.2s ease;
+}
+
+.nav-link svg {
+  flex-shrink: 0;
+}
+
+.nav-link:hover {
+  color:
+    var(--primary);
+
+  background:
+    #F1F5F8;
+}
+
+.nav-link.active {
+  color:
+    #FFFFFF;
+
+  background:
+    var(--primary);
+
+  box-shadow:
+    0 5px 15px
+    rgba(
+      49,
+      114,
+      162,
+      0.25
+    );
+}
+
+
+/* ==========================================
+   LOGOUT
+========================================== */
+
+.logout-button {
+  height: 42px;
+
+  margin-top: auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 8px;
+
+  border: none;
+
+  border-radius:
+    24px;
+
+  color:
+    #64748B;
+
+  background:
+    #F2F5F7;
+
+  font-size: 14px;
+
+  font-weight: 500;
+
+  transition:
+    all 0.2s ease;
+}
+
+.logout-button:hover {
+  color:
+    var(--primary);
+
+  background:
+    var(--primary-light);
+}
+
+.copyright {
+  margin-top: 15px;
+
+  text-align: center;
+
+  color:
+    #758295;
+
+  font-size: 11px;
+
+  font-weight: 500;
+}
+
+
+/* ==========================================
+   MAIN CONTENT
+========================================== */
+
+.main-content {
+  margin-left:
+    250px;
+
+  width:
+    calc(
+      100vw - 250px
+    );
+
+  height: 100vh;
+
+  padding:
+    30px 36px;
+
+  overflow: hidden;
+}
+
+
+/* ==========================================
+   PAGE COMMON
+========================================== */
+
+.page-shell {
+  width: 100%;
+  height: 100%;
+
+  min-width: 0;
+  min-height: 0;
+
+  display: flex;
+  flex-direction: column;
+
+  overflow: hidden;
+}
+
+.page-title {
+  flex-shrink: 0;
+
+  margin:
+    0 0 24px;
+
+  color:
+    #151B26;
+
+  font-size: 36px;
+
+  line-height: 1.2;
+
+  font-weight: 800;
+
+  letter-spacing:
+    -0.6px;
+}
+
+
+/* ==========================================
+   COMMON TEXT
+========================================== */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+span,
+div,
+a,
+button,
+input,
+select,
+textarea,
+table,
+th,
+td {
+  font-family:
+    "Inter",
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+
+/* ==========================================
+   RESPONSIVE WIDTH
+========================================== */
+
+@media (
+  max-width: 1200px
+) {
+
+  .sidebar {
+    width: 220px;
+  }
+
+  .main-content {
+    margin-left:
+      220px;
+
+    width:
+      calc(
+        100vw - 220px
+      );
+
+    padding:
+      25px;
+  }
+
+  .page-title {
+    font-size:
+      31px;
+  }
+}
